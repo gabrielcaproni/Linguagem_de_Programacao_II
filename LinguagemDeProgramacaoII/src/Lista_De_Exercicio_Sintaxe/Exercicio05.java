@@ -27,7 +27,7 @@ public class Exercicio05
         gender = entrada.next();
         
         imc = peso / (altura * altura);
-        System.out.println("Seu IMC é: ");
+        System.out.println("Seu IMC é: " + imc);
         
         if(gender.equals("M"))
             if(imc < 19.1)
