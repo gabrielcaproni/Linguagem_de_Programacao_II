@@ -35,7 +35,9 @@ public class Programa {
         System.out.println(outraConta);
         System.out.println("Informe um valor para transferir: ");
         boolean transfere = minhaConta.transfere(outraConta, entrada.nextDouble());
+        
         if(transfere){
+            
             System.out.println("Tranferencia realizada com sucesso !");
             System.out.println("Saldo da conta debitada: R$ " + minhaConta.saldo);
             System.out.println("Saldo da conta creditada: R$ " + outraConta.saldo);

@@ -10,13 +10,14 @@ package banco;
  */
 public class Conta {
          
-        String cliente;
+        Cliente objcliente;
         double saldo = 0;
         double limite;
     
         public void deposita(double saldo){ // método 
             this.saldo = this.saldo + saldo;
             System.out.println("Depósito efetuado com sucesso !");
+            
         }
         
         
