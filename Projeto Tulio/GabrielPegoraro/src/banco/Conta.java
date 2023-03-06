@@ -10,29 +10,41 @@ package banco;
  */
 public class Conta {
          
-        Cliente objcliente;
+        Cliente objcliente = new Cliente();
+        private Cliente objcliente2;
         double saldo = 0;
-        double limite;
+        private double limite;
+        
+        public void setCliente1(Cliente cliente1){
+            this.objcliente = cliente1;
+        }
+        
+        public void setCliente2(Cliente cliente2){
+            this.objcliente2 = cliente2;
+        }
+        
+        public double getSaldo(){
+            return this.saldo;
+        }
+        
+        public void setCliente(Cliente cliente){
+            this.objcliente = cliente;
+        }   
     
         public void deposita(double saldo){ // método 
             this.saldo = this.saldo + saldo;
-            System.out.println("Depósito efetuado com sucesso !");
+            System.out.println("Depósito realizado para: " + objcliente.getNome());
             
         }
         
         
-        public boolean saca(double saldo) {
+        public boolean saca(double saque) {
             
-            if(this.saldo >= saldo){
-            this.saldo = this.saldo - saldo;
-            
-            System.out.println("Saque efetuado com sucesso !");
-            return true;
-            
-            }else{
-                System.out.println("Saldo Insuficiente para saque !");
-                return false;
+            if(this.saldo < saque){
+            return false;
             }
+            this.saldo -= saque;
+            return true;
             
     }
                public boolean transfere(Conta conta, double valor){
@@ -42,9 +54,10 @@ public class Conta {
                        
                    }else{
                        
-                      this.saca(valor);
-                      conta.deposita(valor);
+                      this.saldo -= valor;
+                      conta.saldo += valor;
                       return true;
+                      
                    }
                                    
                }

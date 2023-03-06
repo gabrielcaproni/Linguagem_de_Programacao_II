@@ -15,32 +15,34 @@ public class Programa {
         
         Scanner entrada = new Scanner(System.in);
         
-        Conta minhaConta = new Conta(); //criando um objeto 
+        Conta minhaConta = new Conta(); //criando um objeto      
         
-        minhaConta.cliente = "Gabriel Caproni Pegoraro";
-        System.out.println(minhaConta); 
+        minhaConta.deposita(1000);
+        System.out.println("Saldo da Conta: R$ " + minhaConta.getSaldo());
         
-        System.out.println("Digite um valor para depósito: ");
+        System.out.println("Digite um valor para depósito:  ");  
         minhaConta.deposita(entrada.nextDouble());
-        System.out.println("Saldo minha conta: " + minhaConta.saldo);
+        System.out.println("Saldo da Conta: R$ " + minhaConta.getSaldo());
+        
+        System.out.println("Insira um valor para saque: ");
+        Boolean saque = minhaConta.saca(entrada.nextDouble());
+        
+       if(saque) {
+            System.out.println("Saldo na conta: R$" + minhaConta.getSaldo());
+        }else {
+            System.out.println("Valor de saque maior que o de saldo na conta. Saque nao efetuado.");
+        }
        
-        System.out.println("Digite um valor para saque: ");  
-        minhaConta.saca(entrada.nextDouble());
-        
-        System.out.println("Nome do cliente: " + minhaConta.cliente);
-        System.out.println("Saldo após saque: " + minhaConta.saldo);
-        
-        Conta outraConta = new Conta(); //criando um objeto
+                Conta outraConta = new Conta();
                 
-        System.out.println(outraConta);
         System.out.println("Informe um valor para transferir: ");
         boolean transfere = minhaConta.transfere(outraConta, entrada.nextDouble());
         
         if(transfere){
             
             System.out.println("Tranferencia realizada com sucesso !");
-            System.out.println("Saldo da conta debitada: R$ " + minhaConta.saldo);
-            System.out.println("Saldo da conta creditada: R$ " + outraConta.saldo);
+            System.out.println("Saldo da conta debitada: R$ " + minhaConta.getSaldo());
+            System.out.println("Saldo da conta creditada: R$ " + outraConta.getSaldo());
             
         }else{
             System.out.println("Nao foi possivel realizar a transferencia, pois o saldo e insuficiente !");

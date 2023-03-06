@@ -15,6 +15,7 @@ public class Exercicio06
         Scanner entrada = new Scanner(System.in);
         
         double comprimento, largura, area, perimetro;
+        
         System.out.println("Informe o comprimento do retângulo: ");
         comprimento = entrada.nextDouble();
         

@@ -10,11 +10,15 @@ package banco;
  */
 public class TesteReferenciaCliente {
     public static void main(String[] args) {
-        Conta cl = new Conta();
-        Cliente clil = new Cliente();
-        cl.objcliente = clil;
-        cl.objcliente.nome = "Paola Dias";
-        System.out.println("Nome: " + cl.objcliente.nome);
+        
+        Conta c1 = new Conta();
+        Cliente cli = new Cliente();
+        c1.setCliente(cli);
+        
+        cli.setNome("Gabriel Caproni Pegoraro");
+        c1.deposita(100000);
+        
+        System.out.println(c1.getSaldo());
                 
     }
 }
