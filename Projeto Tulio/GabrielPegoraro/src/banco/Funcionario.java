@@ -99,4 +99,21 @@ public class Funcionario {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
+    
+    public void bonifica(double aumento){
+        this.salario = salario + aumento;
+    } 
+    
+    public void demite(){
+        this.setAtivo(false);
+    }
+    
+    public void mostra(){
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Departamento: " + this.departamento);
+        System.out.println("Data de Entrada: " + this.data);
+        System.out.println("RG: " + this.RG);
+        System.out.println("Salário: " + this.salario);
+        System.out.println("Funcionario ativo? " + this.isAtivo());
+    }
 }
