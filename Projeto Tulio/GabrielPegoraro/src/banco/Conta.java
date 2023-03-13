@@ -12,8 +12,39 @@ public class Conta {
          
         Cliente objcliente = new Cliente();
         private Cliente objcliente2;
+        private static int totalDeContas;
         double saldo = 0;
         private double limite;
+        private int numero;
+        
+        Conta(){
+            System.out.println("Construindo uma conta");
+            Conta.totalDeContas = Conta.totalDeContas + 1;
+        }
+
+    public Conta(Cliente objcliente2, double limite) {
+        this.objcliente2 = objcliente2;
+        this.limite = limite;
+    }
+        
+        Conta(double saldo){
+            this(); // Invoca o construtor padrão
+            this.saldo = saldo;
+        }
+        
+        Conta(double saldo, int numero){
+            this(saldo); // Invocar o construtor anterior 
+            this.numero = numero;
+            
+        }
+        
+        public static int getTotalDeContas(){
+            return Conta.totalDeContas;
+        }
+        
+        public int getNumero(){
+            return this.numero;
+        }
         
         public void setCliente1(Cliente cliente1){
             this.objcliente = cliente1;
