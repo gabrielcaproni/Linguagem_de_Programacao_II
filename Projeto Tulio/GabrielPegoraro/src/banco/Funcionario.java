@@ -9,7 +9,7 @@ package banco;
  * @author Gabriel Caproni Pegoraro
  */
 public class Funcionario {
-    private String nome;
+    private String nomeFuncionario;
     private String departamento;
     private double salario; 
     private String data;
@@ -20,14 +20,14 @@ public class Funcionario {
      * @return the nome
      */
     public String getNome() {
-        return nome;
+        return nomeFuncionario;
     }
 
     /**
      * @param nome the nome to set
      */
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nomeFuncionario = nome;
     }
 
     /**
@@ -108,8 +108,12 @@ public class Funcionario {
         this.setAtivo(false);
     }
     
+    public double getBonifica(){
+        return this.getSalario() * 0.10;
+    }
+    
     public void mostra(){
-        System.out.println("Nome: " + this.nome);
+        System.out.println("Nome: " + this.nomeFuncionario);
         System.out.println("Departamento: " + this.departamento);
         System.out.println("Data de Entrada: " + this.data);
         System.out.println("RG: " + this.RG);
