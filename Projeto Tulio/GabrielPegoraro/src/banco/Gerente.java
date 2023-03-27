@@ -13,6 +13,11 @@ public class Gerente extends Funcionario{
     private int senha;
     private int numeroFuncionariosGerenciados;
     
+    @Override
+    public double getBonifica(){
+        return super.getBonifica() + 1000;
+    }
+    
     public boolean autentica(int senha){
         
         if(this.getSenha() == senha){
