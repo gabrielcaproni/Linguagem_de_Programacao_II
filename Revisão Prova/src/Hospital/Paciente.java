@@ -11,6 +11,7 @@ package Hospital;
 public class Paciente {
     private String nome;
     private double totalPaciente;
+    private int codPaciente;
 
     /**
      * @return the nome
@@ -40,4 +41,11 @@ public class Paciente {
         this.totalPaciente = totalPaciente;
     }
     
+    public void setCodPeciente(int codPaciente){
+        this.codPaciente = codPaciente;
+    }
+    
+    public int getCodPaciente(){
+        return codPaciente;
+    }
 }
