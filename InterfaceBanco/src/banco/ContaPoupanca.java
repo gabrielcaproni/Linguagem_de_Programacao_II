@@ -8,19 +8,13 @@ package banco;
  *
  * @author Gabriel Pegoraro
  */
-public class ContaCorrente extends Conta{
-    
-    public ContaCorrente(){
+public class ContaPoupanca extends Conta{
+    ContaPoupanca(){
         super();
     }
     
     @Override
     void atualiza(double taxa){
-      this.deposita(this.getSaldo() * (taxa * 2));
+        this.deposita(this.getSaldo() * (taxa * 3));
     }
-    
-    public void deposita(double deposito){
-        super.deposita(deposito - 1.00);
-    }
-    
 }

@@ -8,7 +8,7 @@ package banco;
  *
  * @author Gabriel Pegoraro
  */
-public class ContaCorrente extends Conta{
+public class ContaCorrente extends Conta implements Tributavel{
     
     public ContaCorrente(){
         super();
@@ -23,4 +23,8 @@ public class ContaCorrente extends Conta{
         super.deposita(deposito - 1.00);
     }
     
+    public double calculaTributos(){
+        return this.getSaldo() * 0.01;
+    }
+
 }
