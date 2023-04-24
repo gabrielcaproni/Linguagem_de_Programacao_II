@@ -73,13 +73,15 @@ public class Conta {
         
         public boolean saca(double saque) {
             
-            if(this.saldo < saque){
-            return false;
-            }
-            this.saldo -= saque;
+            if(this.saldo < saldo){
+                this.saldo = this.saldo - saldo;
+                System.out.println("Saque realizado com sucesso");
             return true;
-            
-    }
+            }else{
+                System.out.println("Saldo insuficiente!");
+                return false;
+            }
+        }
         public boolean transfere(Conta conta, double valor){
             if(this.saldo < valor){
                 return false;   
