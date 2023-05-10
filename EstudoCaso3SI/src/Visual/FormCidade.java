@@ -27,22 +27,97 @@ public class FormCidade extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PainelNavegação = new javax.swing.JPanel();
+        btnPrimeiro = new javax.swing.JButton();
+        btnAnterior = new javax.swing.JButton();
+        btnProximo = new javax.swing.JButton();
+        btnUltimo = new javax.swing.JButton();
+        btnFechar = new javax.swing.JButton();
+        painelAbas = new javax.swing.JTabbedPane();
+        abaListagem = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCidade = new javax.swing.JTable();
+        abaDados = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Cidades");
+
+        PainelNavegação.setBorder(javax.swing.BorderFactory.createTitledBorder("navegação"));
+
+        btnPrimeiro.setText("Primeiro");
+        PainelNavegação.add(btnPrimeiro);
+
+        btnAnterior.setText("Anterior");
+        PainelNavegação.add(btnAnterior);
+
+        btnProximo.setText("Próximo");
+        PainelNavegação.add(btnProximo);
+
+        btnUltimo.setText("Último");
+        PainelNavegação.add(btnUltimo);
+
+        btnFechar.setText("Sair");
+        btnFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFecharActionPerformed(evt);
+            }
+        });
+        PainelNavegação.add(btnFechar);
+
+        abaListagem.setLayout(new java.awt.BorderLayout());
+
+        tblCidade.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblCidade);
+
+        abaListagem.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        painelAbas.addTab("Listagem", abaListagem);
+
+        javax.swing.GroupLayout abaDadosLayout = new javax.swing.GroupLayout(abaDados);
+        abaDados.setLayout(abaDadosLayout);
+        abaDadosLayout.setHorizontalGroup(
+            abaDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 498, Short.MAX_VALUE)
+        );
+        abaDadosLayout.setVerticalGroup(
+            abaDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 74, Short.MAX_VALUE)
+        );
+
+        painelAbas.addTab("Dados", abaDados);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(PainelNavegação, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelAbas, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PainelNavegação, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(painelAbas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 138, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
+        dispose(); // Fecha a janela 
+    }//GEN-LAST:event_btnFecharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,5 +162,16 @@ public class FormCidade extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PainelNavegação;
+    private javax.swing.JPanel abaDados;
+    private javax.swing.JPanel abaListagem;
+    private javax.swing.JButton btnAnterior;
+    private javax.swing.JButton btnFechar;
+    private javax.swing.JButton btnPrimeiro;
+    private javax.swing.JButton btnProximo;
+    private javax.swing.JButton btnUltimo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane painelAbas;
+    private javax.swing.JTable tblCidade;
     // End of variables declaration//GEN-END:variables
 }
