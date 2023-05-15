@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
- * @author Gabriel Pegoraro
+ * @author tulio
  */
-
 public class Cidade implements Serializable{ 
 // Serializable: possibilita a persistência e restauração do estado do objeto
     private Integer codigoCidade;
@@ -69,4 +68,10 @@ public class Cidade implements Serializable{
         }
         return true;
     }
+    
+    
+    
+    
+
+
 }

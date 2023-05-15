@@ -1,15 +1,16 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package Visual;
+package visual;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Gabriel Pegoraro
+ * @author tulio
  */
 public class FormPrincipal extends javax.swing.JFrame {
 
@@ -29,44 +30,44 @@ public class FormPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BarraMenu = new javax.swing.JMenuBar();
-        MenuCadastro = new javax.swing.JMenu();
-        MenuCidade = new javax.swing.JMenuItem();
-        MenuFuncionario = new javax.swing.JMenuItem();
-        MenuAjuda = new javax.swing.JMenu();
-        MenuSobre = new javax.swing.JMenuItem();
+        barraMenu = new javax.swing.JMenuBar();
+        menuCadastro = new javax.swing.JMenu();
+        menuCidade = new javax.swing.JMenuItem();
+        menuFuncionario = new javax.swing.JMenuItem();
+        menuAjuda = new javax.swing.JMenu();
+        menuSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Cadastro");
 
-        MenuCadastro.setText("Cadastro");
+        menuCadastro.setText("Cadastro");
 
-        MenuCidade.setText("Cidade");
-        MenuCidade.addActionListener(new java.awt.event.ActionListener() {
+        menuCidade.setText("Cidade");
+        menuCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuCidadeActionPerformed(evt);
+                menuCidadeActionPerformed(evt);
             }
         });
-        MenuCadastro.add(MenuCidade);
+        menuCadastro.add(menuCidade);
 
-        MenuFuncionario.setText("Funcionario");
-        MenuCadastro.add(MenuFuncionario);
+        menuFuncionario.setText("Funcionário");
+        menuCadastro.add(menuFuncionario);
 
-        BarraMenu.add(MenuCadastro);
+        barraMenu.add(menuCadastro);
 
-        MenuAjuda.setText("Ajuda");
+        menuAjuda.setText("Ajuda");
 
-        MenuSobre.setText("Sobre");
-        MenuSobre.addActionListener(new java.awt.event.ActionListener() {
+        menuSobre.setText("Sobre");
+        menuSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuSobreActionPerformed(evt);
+                menuSobreActionPerformed(evt);
             }
         });
-        MenuAjuda.add(MenuSobre);
+        menuAjuda.add(menuSobre);
 
-        BarraMenu.add(MenuAjuda);
+        barraMenu.add(menuAjuda);
 
-        setJMenuBar(BarraMenu);
+        setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,23 +77,28 @@ public class FormPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCidadeActionPerformed
-        FormCidade form = new FormCidade(this, true);
+    private void menuCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCidadeActionPerformed
+        // TODO add your handling code here:
+        FormCidade form  = new FormCidade(this,true);
+        //this: chama a partir deste form
+        // true: Modal: sobre o form principal e não deixa acessa-lo
         form.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-        form.setLocale(null);
-        form.setResizable(false);
-        form.setVisible(true);
-    }//GEN-LAST:event_MenuCidadeActionPerformed
+        // não deixa fechar o form pelo x
+        form.setLocationRelativeTo(null); // centro
+        form.setResizable(false); // retira o botão maximizar
+        form.setVisible(true); //mostra o form
+    }//GEN-LAST:event_menuCidadeActionPerformed
 
-    private void MenuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSobreActionPerformed
-        JOptionPane.showMessageDialog(null, "Sistema de Cadastro\nDireitos reservados\nVersão 1.0");
-    }//GEN-LAST:event_MenuSobreActionPerformed
+    private void menuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSobreActionPerformed
+        // TODO add your handling code here:
+       JOptionPane.showMessageDialog(null,"Sistema de Cadastro\nDireitos reservado\nVersão 1.0");
+    }//GEN-LAST:event_menuSobreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,18 +132,18 @@ public class FormPrincipal extends javax.swing.JFrame {
             public void run() {
                // new FormPrincipal().setVisible(true);
                FormPrincipal form = new FormPrincipal();
-               form.setLocationRelativeTo(null);
+               form.setLocationRelativeTo(null);//janela no centro
                form.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar BarraMenu;
-    private javax.swing.JMenu MenuAjuda;
-    private javax.swing.JMenu MenuCadastro;
-    private javax.swing.JMenuItem MenuCidade;
-    private javax.swing.JMenuItem MenuFuncionario;
-    private javax.swing.JMenuItem MenuSobre;
+    private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JMenu menuAjuda;
+    private javax.swing.JMenu menuCadastro;
+    private javax.swing.JMenuItem menuCidade;
+    private javax.swing.JMenuItem menuFuncionario;
+    private javax.swing.JMenuItem menuSobre;
     // End of variables declaration//GEN-END:variables
 }

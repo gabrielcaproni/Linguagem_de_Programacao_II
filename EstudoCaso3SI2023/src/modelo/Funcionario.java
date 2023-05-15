@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -11,7 +11,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Gabriel Pegoraro
+ * @author tulio
  */
 public class Funcionario implements Serializable{
     
@@ -88,6 +88,7 @@ public class Funcionario implements Serializable{
         }
         return true;
     }
+    
     
     
 }

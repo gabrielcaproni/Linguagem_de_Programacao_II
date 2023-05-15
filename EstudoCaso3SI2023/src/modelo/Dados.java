@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author Gabriel Pegoraro
+ * @author tulio
  */
 public class Dados {
     
-    public static List<Cidade> ListaCidade = new ArrayList<>();
-    public static List<Funcionario> ListaFuncionario = new ArrayList<>();
+    public static List<Cidade> listaCidade = new ArrayList<>();
+    public static List<Funcionario> listaFuncionario = new ArrayList<>();
     
 }
