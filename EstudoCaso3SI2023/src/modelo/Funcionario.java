@@ -13,24 +13,25 @@ import java.util.Objects;
 
 /**
  *
- * @author luizh
+ * @author tulio
  */
-public class Funcionario implements Serializable {
-    private Integer codFuncionario;
+public class Funcionario implements Serializable{
+    
+    private Integer codigoFuncionario;
     private String nomeFuncionario;
     private Double salarioFuncionario;
     private Calendar nascimentoFuncionario;
-    private Cidade objCidade;
-    
+    Cidade objCidade; // relacionamento com cidade
+
     public Funcionario() {
     }
 
-    public Integer getCodFuncionario() {
-        return codFuncionario;
+    public Integer getCodigoFuncionario() {
+        return codigoFuncionario;
     }
 
-    public void setCodFuncionario(Integer codFuncionario) {
-        this.codFuncionario = codFuncionario;
+    public void setCodigoFuncionario(Integer codigoFuncionario) {
+        this.codigoFuncionario = codigoFuncionario;
     }
 
     public String getNomeFuncionario() {
@@ -67,8 +68,8 @@ public class Funcionario implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 83 * hash + Objects.hashCode(this.codFuncionario);
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.codigoFuncionario);
         return hash;
     }
 
@@ -84,7 +85,7 @@ public class Funcionario implements Serializable {
             return false;
         }
         final Funcionario other = (Funcionario) obj;
-        if (!Objects.equals(this.codFuncionario, other.codFuncionario)) {
+        if (!Objects.equals(this.codigoFuncionario, other.codigoFuncionario)) {
             return false;
         }
         return true;
@@ -95,5 +96,7 @@ public class Funcionario implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return sdf.format(nascimentoFuncionario.getTime());
     }
+    
+    
     
 }

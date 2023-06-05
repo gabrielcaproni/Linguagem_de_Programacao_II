@@ -10,26 +10,22 @@ import java.util.Objects;
 
 /**
  *
- * @author luizh
+ * @author tulio
  */
-
-//Serializable: possibilita a persistência e restauração do estado do objeto
-//também exige que usemos classes ao invés de tipos primitivos
-
-public class Cidade implements Serializable {  
-    private Integer codCidade;
+public class Cidade implements Serializable{ 
+// Serializable: possibilita a persistência e restauração do estado do objeto
+    private Integer codigoCidade;
     private String nomeCidade, ufCidade;
-    
-    //padrão javabeans
-    public Cidade() {
+
+    public Cidade() { // padrão javabeans
     }
 
-    public Integer getCodCidade() {
-        return codCidade;
+    public Integer getCodigoCidade() {
+        return codigoCidade;
     }
 
-    public void setCodCidade(Integer codCidade) {
-        this.codCidade = codCidade;
+    public void setCodigoCidade(Integer codigoCidade) {
+        this.codigoCidade = codigoCidade;
     }
 
     public String getNomeCidade() {
@@ -50,8 +46,8 @@ public class Cidade implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.codCidade);
+        int hash = 3;
+        hash = 83 * hash + Objects.hashCode(this.codigoCidade);
         return hash;
     }
 
@@ -67,11 +63,22 @@ public class Cidade implements Serializable {
             return false;
         }
         final Cidade other = (Cidade) obj;
-        if (!Objects.equals(this.codCidade, other.codCidade)) {
+        if (!Objects.equals(this.codigoCidade, other.codigoCidade)) {
             return false;
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return nomeCidade;
+    }
     
     
+    
+    
+    
+    
+
+
 }

@@ -9,25 +9,32 @@ import java.util.List;
 
 /**
  *
- * @author luizh
+ * @author tulio
  */
-public class DAOFuncionario {
-    
-    public List<Funcionario> getLista() {
+public class DAOFuncionario { // Data Acess Object
+   
+    public List<Funcionario> getLista(){
         return Dados.listaFuncionario;
     }
     
-    public boolean salvar(Funcionario obj) {
-        if(obj.getCodFuncionario() ==  null){
-            Integer codigo = Dados.listaFuncionario.size() + 1;
-            obj.setCodFuncionario(codigo);
+    public boolean salvar(Funcionario obj){
+        if(obj.getCodigoFuncionario()==null){
+            Integer codigo = Dados.listaFuncionario.size() +1;
+            obj.setCodigoFuncionario(codigo);
             Dados.listaFuncionario.add(obj);
         }
         return true;
     }
     
-    public boolean remover(Funcionario obj) {
+    public boolean remover(Funcionario obj){
         Dados.listaFuncionario.remove(obj);
         return true;
-    }
+    }    
+
 }
+    
+
+    
+    
+    
+

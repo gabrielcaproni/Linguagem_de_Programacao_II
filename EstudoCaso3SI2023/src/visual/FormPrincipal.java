@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author luizh
+ * @author tulio
  */
 public class FormPrincipal extends javax.swing.JFrame {
 
@@ -39,7 +39,6 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Cadastro");
-        setPreferredSize(new java.awt.Dimension(640, 480));
 
         menuCadastro.setText("Cadastro");
 
@@ -51,7 +50,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         });
         menuCadastro.add(menuCidade);
 
-        menuFuncionario.setText("Funcionario");
+        menuFuncionario.setText("Funcionário");
         menuFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuFuncionarioActionPerformed(evt);
@@ -83,31 +82,39 @@ public class FormPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSobreActionPerformed
-        JOptionPane.showMessageDialog(null, "Sistema de Cadastro\nDireitos Reservados\nVersão 1.0");
-    }//GEN-LAST:event_menuSobreActionPerformed
-
     private void menuCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCidadeActionPerformed
+        // TODO add your handling code here:
+        FormCidade form  = new FormCidade(this,true);
         //this: chama a partir deste form
-        //true: Modal: sobrepõe o ofrm principal e não deixa acessá-lo
-        FormCidade form = new FormCidade(this, true);
-        form.setLocationRelativeTo(null);
-        // form.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-        form.setResizable(false);
-        form.setVisible(true);
+        // true: Modal: sobre o form principal e não deixa acessa-lo
+        form.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        // não deixa fechar o form pelo x
+        form.setLocationRelativeTo(null); // centro
+        form.setResizable(false); // retira o botão maximizar
+        form.setVisible(true); //mostra o form
     }//GEN-LAST:event_menuCidadeActionPerformed
 
+    private void menuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSobreActionPerformed
+        // TODO add your handling code here:
+       JOptionPane.showMessageDialog(null,"Sistema de Cadastro\nDireitos reservado\nVersão 1.0");
+    }//GEN-LAST:event_menuSobreActionPerformed
+
     private void menuFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFuncionarioActionPerformed
-        FormFuncionario form = new FormFuncionario(this, true);
-        form.setLocationRelativeTo(null);
-        form.setResizable(false);
-        form.setVisible(true);
+        // TODO add your handling code here:
+         FormFuncionario form  = new FormFuncionario(this,true);
+        //this: chama a partir deste form
+        // true: Modal: sobre o form principal e não deixa acessa-lo
+        form.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        // não deixa fechar o form pelo x
+        form.setLocationRelativeTo(null); // centro
+        form.setResizable(false); // retira o botão maximizar
+        form.setVisible(true); //mostra o form
     }//GEN-LAST:event_menuFuncionarioActionPerformed
 
     /**
@@ -121,7 +128,7 @@ public class FormPrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -140,8 +147,9 @@ public class FormPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+               // new FormPrincipal().setVisible(true);
                FormPrincipal form = new FormPrincipal();
-               form.setLocationRelativeTo(null);
+               form.setLocationRelativeTo(null);//janela no centro
                form.setVisible(true);
             }
         });
