@@ -16,34 +16,39 @@ import java.sql.SQLException;
  */
 public class Conexao {
     private static final String driver = "com.mysql.jdbc.Driver";
-    private static final String banco = "jdbc:mysql://localhost:3306/estudocaso3SI";
-    private static final String usuario = "Gabriel Caproni Pegoraro";
-    private static final String senha = "1234";
-            
-    private static Connection con = null;
+    private static final String banco = "jdbc:mysql://localhost:3306/estudocaso3si";
+    private static final String usuario = "root";
+    private static final String senha = "";
     
-    public static Connection getConexao() throws SQLException{
+    private static Connection con = null;
+
+    public Conexao() {
+    }
+    
+    public static Connection getConexao(){
         if(con==null){
             try{
                 Class.forName(driver);
                 con = DriverManager.getConnection(banco,usuario,senha);
             }catch(ClassNotFoundException ex){
-                System.out.println("Não encontrou o driver " + ex.getMessage());
+                System.out.println("Não encontrou o driver: "+ex.getMessage());
             }catch(SQLException ex){
-                System.out.println("Erro de conexão: " + ex.getMessage());
+                System.out.println("Erro de conexão: "+ex.getMessage());
             }
+        }
+        return con;
+    }
+    
+    public static PreparedStatement getPreparedStatement(String sql){
+        if(con==null){
+            con = getConexao();
+        }
+        try{
+            return con.prepareStatement(sql);
+        }catch(SQLException ex){
+            System.out.println("Erro de SQL: "+ex.getMessage());
         }
         return null;
     }
     
-    public static PreparedStatement getPreparedStatement(String sql) throws SQLException{
-        if(con==null){
-             con = getConexao();
-        }try{
-            return con.prepareStatement(sql);
-        }catch(SQLException ex){
-            System.out.println("Erro de SQL: " + ex.getMessage());
-        }
-        return null;
-    }
 }

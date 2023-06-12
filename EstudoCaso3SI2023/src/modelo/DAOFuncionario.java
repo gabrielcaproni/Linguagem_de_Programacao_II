@@ -5,32 +5,48 @@
  */
 package modelo;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author tulio
+ * @author gabriel
  */
-public class DAOFuncionario { // Data Acess Object
+  
+    public class DAOFuncionario { // Data Acess Object
    
+    DAOCidade objDAOCidade = new DAOCidade();
+    
     public List<Funcionario> getLista(){
-        return Dados.listaFuncionario;
-    }
-    
-    public boolean salvar(Funcionario obj){
-        if(obj.getCodigoFuncionario()==null){
-            Integer codigo = Dados.listaFuncionario.size() +1;
-            obj.setCodigoFuncionario(codigo);
-            Dados.listaFuncionario.add(obj);
+        String sql = "select * from funcionario";
+        List<Funcionario> lista = new ArrayList<>();
+        try{
+            PreparedStatement pst = Conexao.getPreparedStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()){
+                Funcionario obj = new Funcionario();
+                obj.setCodigoFuncionario(rs.getInt("Codigo"));
+                obj.setNomeFuncionario(rs.getString("Nome"));
+                obj.setSalarioFuncionario(rs.getDouble("Salario"));
+                
+                java.sql.Date dt = rs.getDate("Nascimento");
+                Calendar c = Calendar.getInstance();
+                c.setTime(dt);
+                obj.setNascimentoFuncionario(c);
+                obj.setObjCidade(objDAOCidade.localizar(rs.getInt("Cidade")));
+                
+                lista.add(obj);
+            }
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Erro de SQL: "+ex.getMessage());
         }
-        return true;
+        return lista;
     }
-    
-    public boolean remover(Funcionario obj){
-        Dados.listaFuncionario.remove(obj);
-        return true;
-    }    
-
 }
     
 
