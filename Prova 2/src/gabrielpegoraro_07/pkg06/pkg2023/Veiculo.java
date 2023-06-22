@@ -17,11 +17,25 @@ abstract public class Veiculo {
     private double preco;
     private String cor;
     private Endereco end;
+
+    public Veiculo(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        this.modelo = modelo;
+        this.marca = marca;
+        this.ano = ano;
+        this.preco = preco;
+        this.cor = cor;
+        this.end = end;
+    }
     
     abstract void mover();
     abstract void parar();
     public void dadosVeiculo(){
-        System.out.println("Modelo do veículo: " );
+        System.out.println("Modelo: " + this.getModelo());
+        System.out.println("Marca: " + this.getMarca());
+        System.out.println("Ano: " + this.getAno());
+        System.out.println("Preco: " + this.getPreco());
+        System.out.println("Cor: " + this.getCor());
+        System.out.println("Endereco: " + end.getRua() + "\nNumero: " + end.getNumero() + "\nBairro: " + end.getBairro());
     }
     /**
      * @return the modelo

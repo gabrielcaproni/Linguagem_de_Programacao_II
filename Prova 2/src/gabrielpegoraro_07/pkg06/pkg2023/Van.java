@@ -11,14 +11,32 @@ package gabrielpegoraro_07.pkg06.pkg2023;
  */
 public class Van extends VeiculoPequeno{
 
+    public Van(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        super(modelo, marca, ano, preco, cor, end);
+    }
+    
+     @Override
+    public void registraPlaca(String numeroPlaca) {
+        this.setNumeroPlaca(numeroPlaca);
+        System.out.println("Placa registrada para van.");
+    }
+
     @Override
     void mover() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Van movendo.");
     }
 
     @Override
     void parar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Van parada.");
     }
+    
+      @Override
+    public void dadosVeiculo(){
+        System.out.println("*** Relatório da Van ***");
+        super.dadosVeiculo();
+        System.out.println("Placa: " + this.getNumeroPlaca());
+        System.out.println("----------------------------------");
+          }
     
 }

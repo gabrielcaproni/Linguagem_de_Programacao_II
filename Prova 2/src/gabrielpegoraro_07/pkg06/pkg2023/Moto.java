@@ -11,15 +11,33 @@ package gabrielpegoraro_07.pkg06.pkg2023;
  */
 public class Moto extends VeiculoPequeno{
 
+    public Moto(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        super(modelo, marca, ano, preco, cor, end);
+    }
+
     @Override
     void mover() {
-        this.mover();
+        System.out.println("Moto movendo.");
     }
 
     @Override
     void parar() {
-        this.parar();
+        System.out.println("Moto parada.");
     }
+
+    @Override
+    public void registraPlaca(String numeroPlaca) {
+        this.setNumeroPlaca(numeroPlaca);
+        System.out.println("Placa registrada para moto.");
+    }
+    
+    @Override
+    public void dadosVeiculo(){
+        System.out.println("*** Relatório da moto ***");
+        super.dadosVeiculo();
+        System.out.println("Placa: " + this.getNumeroPlaca());
+        System.out.println("----------------------------------");
+          }
 
     
 }

@@ -11,20 +11,41 @@ package gabrielpegoraro_07.pkg06.pkg2023;
  */
 public class Onibus extends VeiculoGrande implements Cadastro{  
 
-    public void registraPlaca(String numeroPlaca) {
-        System.out.println("O veiculo que esta em movimento é: "  );    
+    private String numeroPlaca;
+
+    public Onibus(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        super(modelo, marca, ano, preco, cor, end);
     }
+
+    public String getNumeroPlaca() {
+        return numeroPlaca;
+    }
+
+    public void setNumeroPlaca(String numeroPlaca) {
+        this.numeroPlaca = numeroPlaca;
+    }
+    
+      @Override
+    public void registraPlaca(String numeroPlaca) {
+        this.setNumeroPlaca(numeroPlaca);
+        System.out.println("Placa registrada para onibus.");
+    } 
 
     @Override
     void mover() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Onibus movendo.");
     }
 
     @Override
     void parar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
+        System.out.println("Onibus parado.");
+    }   
     
+      @Override
+    public void dadosVeiculo(){
+        System.out.println("*** Relatório da Onibus ***");
+        super.dadosVeiculo();
+        System.out.println("Placa: " + this.getNumeroPlaca());
+        System.out.println("----------------------------------");
+          }
 }

@@ -11,4 +11,8 @@ package gabrielpegoraro_07.pkg06.pkg2023;
  */
 abstract public class VeiculoGrande extends Veiculo{
     
+    public VeiculoGrande(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        super(modelo, marca, ano, preco, cor, end);
+    }
+    
 }

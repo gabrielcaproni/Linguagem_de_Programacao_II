@@ -11,14 +11,25 @@ package gabrielpegoraro_07.pkg06.pkg2023;
  */
 public class Trem extends VeiculoGrande{
 
+    public Trem(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        super(modelo, marca, ano, preco, cor, end);
+    }
+
     @Override
     void mover() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Trem movendo.");
     }
 
     @Override
     void parar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Trem parado.");
     }
+    
+    @Override
+    public void dadosVeiculo(){
+        System.out.println("*** Relatório do Trem ***");
+        super.dadosVeiculo();
+        System.out.println("----------------------------------");
+          }
     
 }

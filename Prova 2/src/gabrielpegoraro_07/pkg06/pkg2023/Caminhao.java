@@ -11,22 +11,41 @@ package gabrielpegoraro_07.pkg06.pkg2023;
  */
 public class Caminhao extends VeiculoGrande implements Cadastro{
 
+    private String numeroPlaca;
+
+    public Caminhao(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        super(modelo, marca, ano, preco, cor, end);
+    }
+
+    public String getNumeroPlaca() {
+        return numeroPlaca;
+    }
+
+    public void setNumeroPlaca(String numeroPlaca) {
+        this.numeroPlaca = numeroPlaca;
+    }
+    
     @Override
     void mover() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Caminhao movendo.");
     }
 
     @Override
     void parar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Caminhao parado.");
     }
-
+    
     @Override
     public void registraPlaca(String numeroPlaca) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
+        this.setNumeroPlaca(numeroPlaca);
+        System.out.println("Placa registrada para caminhao.");
+    } 
     
-    
+      @Override
+    public void dadosVeiculo(){
+        System.out.println("*** Relatório da Caminhao ***");
+        super.dadosVeiculo();
+        System.out.println("Placa: " + this.getNumeroPlaca());
+        System.out.println("----------------------------------");
+          }
 }

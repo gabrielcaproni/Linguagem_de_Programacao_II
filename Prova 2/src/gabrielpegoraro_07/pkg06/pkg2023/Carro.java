@@ -11,15 +11,33 @@ package gabrielpegoraro_07.pkg06.pkg2023;
  */
 public class Carro extends VeiculoPequeno{
 
+    public Carro(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        super(modelo, marca, ano, preco, cor, end);
+    }
+    
+     @Override
+    public void registraPlaca(String numeroPlaca) {
+        this.setNumeroPlaca(numeroPlaca);
+        System.out.println("Placa registrada para carro.");
+    }
+
     @Override
     void mover() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Carro em movimento.");
     }
 
     @Override
     void parar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Carro parado.");
     }
+    
+      @Override
+    public void dadosVeiculo(){
+        System.out.println("*** Relatório do Carro ***");
+        super.dadosVeiculo();
+        System.out.println("Placa: " + this.getNumeroPlaca());
+        System.out.println("----------------------------------");
+          }
 
    
     

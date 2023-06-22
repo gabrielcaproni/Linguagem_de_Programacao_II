@@ -9,6 +9,20 @@ package gabrielpegoraro_07.pkg06.pkg2023;
  *
  * @author 12303449693
  */
-abstract public class VeiculoPequeno extends Veiculo{
+abstract public class VeiculoPequeno extends Veiculo implements Cadastro{
         
+    public VeiculoPequeno(String modelo, String marca, int ano, double preco, String cor, Endereco end) {
+        super(modelo, marca, ano, preco, cor, end);
+    }
+    
+    private String numeroPlaca;
+
+    public String getNumeroPlaca() {
+        return numeroPlaca;
+    }
+
+    public void setNumeroPlaca(String numeroPlaca) {
+        this.numeroPlaca = numeroPlaca;
+    }
+    
 }
